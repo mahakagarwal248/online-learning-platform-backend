@@ -40,7 +40,7 @@ app.use(helmet());
 // enable CORS - Cross Origin Resource Sharing
 const corsOption = {
   credentials: true,
-  origin: [process.env.FRONT_URL, process.env.FRONT_URL_2],
+  origin: [process.env.FRONT_URL, process.env.FRONT_URL_PROD],
 };
 app.use(cors(corsOption));
 
