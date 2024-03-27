@@ -42,7 +42,11 @@ app.use(helmet());
 //   credentials: true,
 //   origin: [process.env.FRONT_URL, process.env.FRONT_URL_PROD],
 // };
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://insight-learning.netlify.app"],
+  })
+);
 
 // Data sanitization against NoSQL query injection
 app.use(mongoSanitize());
