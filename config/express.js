@@ -38,15 +38,12 @@ app.use(methodOverride());
 app.use(helmet());
 
 // enable CORS - Cross Origin Resource Sharing
-// const corsOption = {
-//   credentials: true,
-//   origin: [process.env.FRONT_URL, process.env.FRONT_URL_PROD],
-// };
-app.use(
-  cors({
-    origin: ["https://insight-learning.netlify.app"],
-  })
-);
+const corsOption = {
+  credentials: true,
+  origin: [process.env.FRONT_URL, process.env.FRONT_URL_PROD],
+};
+
+app.use(cors(corsOption));
 
 // Data sanitization against NoSQL query injection
 app.use(mongoSanitize());
